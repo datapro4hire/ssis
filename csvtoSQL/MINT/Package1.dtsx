@@ -1,217 +1,37 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="7/28/2024 7:59:53 PM"
+  DTS:CreationDate="7/29/2024 5:54:54 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DATAPRO4HIRE"
   DTS:CreatorName="DATAPRO4HIRE\xavier2"
-  DTS:DTSID="{DE75F81A-F7DB-4F6B-8F3E-97BD1CD9CB4B}"
+  DTS:DTSID="{4F201F78-1FC0-4803-9594-5E68D31F330B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{96B143E9-4DFA-487F-83AE-A5A9A2C77F08}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{113F929B-9357-4169-84DA-58C4D99A36F8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[CSV - Flat File Connection Manager]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E94EC00A-84C9-468F-AA87-80C464899ED2}"
-      DTS:ObjectName="CSV - Flat File Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="4105"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="D:\Repos\ssis\source_data.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="UserID"
-              DTS:DTSID="{54C4121D-FD81-4317-AA7A-A1FFC9FEF3B3}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="FullName"
-              DTS:DTSID="{5EB896E6-7A97-417C-AC2A-CFA6D55C1D09}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Age"
-              DTS:DTSID="{866DEE14-68A6-408B-BA9B-D4E812743592}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Email"
-              DTS:DTSID="{03D20081-80E5-4693-847A-54CA6584BCDC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="133"
-              DTS:TextQualified="True"
-              DTS:ObjectName="RegistrationDate"
-              DTS:DTSID="{A6A692DE-AA11-470B-987E-383DB110F0B7}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="133"
-              DTS:TextQualified="True"
-              DTS:ObjectName="LastLoginDate"
-              DTS:DTSID="{85FD7956-E956-41D9-9FD4-A022F0C674BC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="5"
-              DTS:TextQualified="True"
-              DTS:ObjectName="PurchaseTotal"
-              DTS:DTSID="{366AE51F-C8C2-4566-94AA-269F223721A7}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[CSV cleaned data]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{C8A0099B-D680-457B-8B68-7AFD4F97EF76}"
-      DTS:ObjectName="CSV cleaned data">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="4105"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Repos\ssis\source_data.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="UserID"
-              DTS:DTSID="{C59959F8-0690-4EBB-84E0-157AA5CA46E1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="FullName"
-              DTS:DTSID="{9C7762D8-495E-4C0F-8958-709BE0AEF80F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Age"
-              DTS:DTSID="{78D9391F-FEB0-4258-ADAC-E6EA35D4FA7E}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="255"
-              DTS:DataType="130"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Email"
-              DTS:DTSID="{954283C3-95DF-4F71-BF09-5A0A172401B2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="133"
-              DTS:TextQualified="True"
-              DTS:ObjectName="RegistrationDate"
-              DTS:DTSID="{A885BE3D-BCD5-41E6-9F71-8D3D840F8596}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="133"
-              DTS:TextQualified="True"
-              DTS:ObjectName="LastLoginDate"
-              DTS:DTSID="{7EBDFEAA-5CD6-4584-9ACA-AE440D7A3CD1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="5"
-              DTS:TextQualified="True"
-              DTS:ObjectName="PurchaseTotal"
-              DTS:DTSID="{1EB8E337-81EB-4E6E-97E9-3E877696AD71}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[datapro4hire.KoreAssignment_Xavier_Toledo]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{070B50B9-0495-48CA-A029-168462699FC0}"
+      DTS:DTSID="{93140B24-381D-4E96-BFFF-BD1FA54D2F93}"
       DTS:ObjectName="datapro4hire.KoreAssignment_Xavier_Toledo">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=datapro4hire;Initial Catalog=KoreAssignment_Xavier_Toledo;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{070B50B9-0495-48CA-A029-168462699FC0}datapro4hire.KoreAssignment_Xavier_Toledo;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[datapro4hire.KoreAssignment_Xavier_Toledo 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{594E9F65-F0B3-49E5-A30D-E13947AD39B9}"
-      DTS:ObjectName="datapro4hire.KoreAssignment_Xavier_Toledo 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=datapro4hire;Initial Catalog=KoreAssignment_Xavier_Toledo;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{594E9F65-F0B3-49E5-A30D-E13947AD39B9}datapro4hire.KoreAssignment_Xavier_Toledo 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[datapro4hire.KoreAssignment_Xavier_Toledo 2]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{306DC193-27F5-4502-8FA2-B1F2553E9687}"
-      DTS:ObjectName="datapro4hire.KoreAssignment_Xavier_Toledo 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=datapro4hire;Initial Catalog=KoreAssignment_Xavier_Toledo;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{306DC193-27F5-4502-8FA2-B1F2553E9687}datapro4hire.KoreAssignment_Xavier_Toledo 2;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=datapro4hire;Initial Catalog=KoreAssignment_Xavier_Toledo;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{93140B24-381D-4E96-BFFF-BD1FA54D2F93}datapro4hire.KoreAssignment_Xavier_Toledo;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{683FCA16-BB1F-4475-A5B1-BA9FC39C6CA0}"
+      DTS:DTSID="{9A28737B-0B27-4DB5-ABA6-6AC091B9B3F3}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -230,7 +50,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="UserID"
-              DTS:DTSID="{84A210AF-4F6F-41B0-BA17-0390F268928A}"
+              DTS:DTSID="{85589A9B-8A3B-4237-8D09-B0A98F778679}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -239,7 +59,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="FullName"
-              DTS:DTSID="{8EA9B22B-D6B3-4656-8A7D-1A1226AB1567}"
+              DTS:DTSID="{86185BAA-2C7D-4E63-8537-1D3F28DA2274}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -247,7 +67,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{CFA825BA-B2EF-4251-980E-6B8B2ACF8D27}"
+              DTS:DTSID="{EE4EE2BB-7BFD-4B4E-B137-84E4CCF7D528}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,7 +76,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Email"
-              DTS:DTSID="{F2B1AE66-E56C-4044-BB5F-4447625133D8}"
+              DTS:DTSID="{06503F31-33CE-4A84-8A8E-3A2AF620C1E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +84,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="RegistrationDate"
-              DTS:DTSID="{F1090B89-AEC7-435C-8951-EEFFD98891F7}"
+              DTS:DTSID="{2A8E5C26-968B-40F6-8CB0-611BE1B48948}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -272,7 +92,7 @@
               DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="LastLoginDate"
-              DTS:DTSID="{78A8854D-BEAD-4593-9C0D-CB156B7C080A}"
+              DTS:DTSID="{00E8C34B-B9F3-495D-B01E-9AD821658C26}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -280,7 +100,7 @@
               DTS:DataType="5"
               DTS:TextQualified="True"
               DTS:ObjectName="PurchaseTotal"
-              DTS:DTSID="{977A5968-1E08-47E0-93FA-B79354995022}"
+              DTS:DTSID="{351D2C71-44F2-4260-8D7B-A76CF7F2C9B7}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -293,7 +113,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{71386103-4200-4DC1-A82E-3CC3243CE546}"
+      DTS:DTSID="{9B9BF506-5494-4CAA-ACFB-C3D1A56EBD96}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -316,7 +136,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">true</property>
+                  name="RetainNulls">false</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
@@ -325,8 +145,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[CSV cleaned data]"
-                  connectionManagerRefId="Package.ConnectionManagers[CSV cleaned data]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -338,11 +158,11 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[UserID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UserID]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[UserID]"
                       name="UserID"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -358,12 +178,12 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FullName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FullName]"
                       length="255"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FullName]"
                       name="FullName"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -379,11 +199,11 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Age]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Age]"
                       name="Age"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -399,12 +219,12 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Email]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Email]"
                       length="255"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Email]"
                       name="Email"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -420,11 +240,11 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]"
                       name="RegistrationDate"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -440,11 +260,11 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastLoginDate]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LastLoginDate]"
                       name="LastLoginDate"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -460,11 +280,11 @@
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PurchaseTotal]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PurchaseTotal]"
                       name="PurchaseTotal"
-                      truncationRowDisposition="FailComponent">
+                      truncationRowDisposition="IgnoreFailure">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -556,7 +376,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[thisisatest]</property>
+                  name="OpenRowset">[stg].[Users]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -608,7 +428,7 @@
                 <input
                   refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -659,6 +479,10 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StgID]"
+                      dataType="i4"
+                      name="StgID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
                       dataType="i4"
@@ -744,7 +568,7 @@
         <NodeLayout
           Size="155,42"
           Id="Package\Data Flow Task"
-          TopLeft="501,235" />
+          TopLeft="524.5,277.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -754,27 +578,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
+          Size="166,50"
           Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="501,168" />
+          TopLeft="515,218" />
         <NodeLayout
-          Size="177,42"
+          Size="192,46"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="491,470" />
+          TopLeft="497,596" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="579.25,210">
+          TopLeft="595.5,268">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,260"
+              EndConnector="0,328"
               Start="0,0"
-              End="0,252.5">
+              End="0,320.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,252.5" />
+                    End="0,320.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
