@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="7/30/2024 6:35:29 PM"
+  DTS:CreationDate="7/31/2024 3:08:18 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DATAPRO4HIRE"
   DTS:CreatorName="DATAPRO4HIRE\xavier2"
-  DTS:DTSID="{0FC9DD90-9CEF-4CB8-9725-A5F7871D00C7}"
+  DTS:DTSID="{BA8B2A87-0424-429B-AA0F-4E7D5C13203B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Package4"
+  DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{E822163D-4BA9-41D5-838D-31BD97C5D319}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{0A161679-A3CA-4605-87F4-550068D26D68}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[datapro4hire.KoreAssignment_Xavier_Toledo]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{74C52198-8B57-491A-ADD1-E8AF6D376A54}"
+      DTS:DTSID="{70673ECD-2795-429F-8CD7-A2D775B88B39}"
       DTS:ObjectName="datapro4hire.KoreAssignment_Xavier_Toledo">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=datapro4hire;Initial Catalog=KoreAssignment_Xavier_Toledo;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package4-{74C52198-8B57-491A-ADD1-E8AF6D376A54}datapro4hire.KoreAssignment_Xavier_Toledo;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=datapro4hire;Initial Catalog=KoreAssignment_Xavier_Toledo;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{70673ECD-2795-429F-8CD7-A2D775B88B39}datapro4hire.KoreAssignment_Xavier_Toledo;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -35,7 +35,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{7779C77E-C261-4C9A-B5CE-AB7A652B4E50}"
+      DTS:DTSID="{FA884A60-FB40-40F5-80D8-90EA02F74364}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -59,6 +59,29 @@
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Age]"
+                      cachedDataType="i4"
+                      cachedName="Age"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]}) || #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} &lt; 5 || #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} &gt; 105 || #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} != (DT_I4)#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} ? NULL(DT_I4) : #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(Age) || Age &lt; 5 || Age &gt; 105 || Age != (DT_I4)Age ? NULL(DT_I4) : Age</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Email]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -80,29 +103,6 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">FINDSTRING((DT_WSTR,255)Email,"@",1) &gt; 0 &amp;&amp; FINDSTRING((DT_WSTR,255)Email,".",1) &gt; FINDSTRING((DT_WSTR,255)Email,"@",1) &amp;&amp; FINDSTRING((DT_WSTR,255)Email,"[^\\w\\-._@+]",1) == 0 ? (DT_WSTR,255)Email : NULL(DT_WSTR,255)</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Age]"
-                      cachedDataType="i4"
-                      cachedName="Age"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[ISNULL](#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]}) || #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} &lt; 5 || #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} &gt; 105 || #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} != (DT_I4)#{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]} ? NULL(DT_I4) : #{Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[Age]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">ISNULL(Age) || Age &lt; 5 || Age &gt; 105 || Age != (DT_I4)Age ? NULL(DT_I4) : Age</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -159,7 +159,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Wed13]</property>
+                  name="OpenRowset">[prod].[Users]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -264,6 +264,10 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
                       dataType="i4"
                       name="UserID" />
@@ -293,6 +297,10 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTotal]"
                       dataType="r8"
                       name="PurchaseTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordLastUpdated]"
+                      dataType="dbTimeStamp"
+                      name="RecordLastUpdated" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -382,6 +390,15 @@
                   refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StgID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StgID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StgID]"
+                      name="StgID"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UserID]"
                       dataType="i4"
@@ -492,6 +509,11 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StgID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StgID]"
+                      name="StgID" />
+                    <outputColumn
                       refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UserID]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UserID]"
@@ -568,6 +590,22 @@
                   refId="Package\Data Flow Task\Sort.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[StgID]"
+                      cachedDataType="i4"
+                      cachedName="StgID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StgID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
                     <inputColumn
                       refId="Package\Data Flow Task\Sort.Inputs[Sort Input].Columns[UserID]"
                       cachedDataType="i4"
@@ -692,6 +730,19 @@
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[StgID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[StgID]"
+                      name="StgID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StgID]}</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Sort.Outputs[Sort Output].Columns[UserID]"
                       dataType="i4"
@@ -828,7 +879,7 @@
         <NodeLayout
           Size="155,42"
           Id="Package\Data Flow Task"
-          TopLeft="495.5,195.5" />
+          TopLeft="375.5,182.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -840,51 +891,33 @@
         <NodeLayout
           Size="157,42"
           Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="474.5,92.5" />
+          TopLeft="384,94" />
         <NodeLayout
           Size="99,42"
           Id="Package\Data Flow Task\Sort"
-          TopLeft="496.5,277.5" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="549.5,134.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,143"
-              Start="0,0"
-              End="0,135.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,135.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="419,277" />
         <NodeLayout
           Size="158,42"
           Id="Package\Data Flow Task\Derived Column"
-          TopLeft="462,517" />
+          TopLeft="382,506" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="370,714" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="543.5,319.5">
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="465.5,136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,197.5"
+              EndConnector="0,141"
               Start="0,0"
-              End="0,190">
+              End="0,133.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,190" />
+                    End="0,133.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -893,24 +926,42 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="456,741" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="542.75,559">
+          TopLeft="459.75,548">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,182"
+              EndConnector="0,166"
               Start="0,0"
-              End="0,174.5">
+              End="0,158.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,174.5" />
+                    End="0,158.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="464.75,319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,187"
+              Start="0,0"
+              End="0,179.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,179.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
