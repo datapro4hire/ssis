@@ -11,7 +11,7 @@ SSIS-based ETL process that migrates data from a CSV file to a production SQL Se
   * Install Visual Studio 2022
   * Locate flat file and convert to Comma Separated Value (.csv) format
   * Create Database, schema(s), and table(s)
-  * Create, tess, and run SSIS packages in Visual Studio 2022
+  * Create, tes, and run SSIS packages in Visual Studio 2022
   
 ### Error Handling
   * Researched error codes and adjusted SQL queries, step by step
