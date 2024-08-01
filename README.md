@@ -12,6 +12,8 @@ SSIS-based ETL process that migrates data from a CSV file to a production SQL Se
   * Locate flat file and convert to Comma Separated Value (.csv) format
   * Create Database, schema(s), and table(s)
   * Create, test, and run SSIS packages in Visual Studio 2022
+    * Implemented: Data FLow Task
+    * Configured: OLE DB Source, OLE DB Destination, Sort, and Derived Column
   
 ### Error Handling
   * Researched error codes and adjusted SQL queries, step by step
