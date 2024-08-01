@@ -27,7 +27,7 @@ SSIS-based ETL process that migrates data from a CSV file to a production SQL Se
 
 ### Execution Report
   * Inserted 29 new records
-  * Ignore duplicate rows
+  * Ignored 4 duplicate rows
   * Transformed values
 
 
